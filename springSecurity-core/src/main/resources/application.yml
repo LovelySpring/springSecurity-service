@@ -13,6 +13,6 @@ spring:
     maxActive: 20
     maxWait: 60000
 
-security:
-  basic:
-    enabled: false
+#security:
+#  basic:
+#    enabled: false

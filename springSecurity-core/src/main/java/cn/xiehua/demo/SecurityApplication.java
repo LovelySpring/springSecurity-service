@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @SpringBootApplication
 @RestController
-public class CoreApplication {
+public class SecurityApplication {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
@@ -20,6 +20,6 @@ public class CoreApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(CoreApplication.class, args);
+        SpringApplication.run(SecurityApplication.class, args);
     }
 }

@@ -18,7 +18,7 @@ import java.util.List;
 public class UserController {
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public List<User> getUsers(@RequestParam(value = "name") String name) {
+    public List<User> getUsers(@RequestParam(value = "name", required = false) String name) {
         System.out.println(name);
         List users = new ArrayList();
         User user = new User();

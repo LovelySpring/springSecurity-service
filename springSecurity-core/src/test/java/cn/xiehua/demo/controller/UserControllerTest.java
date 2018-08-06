@@ -36,7 +36,7 @@ public class UserControllerTest {
 
     @Test
     public void getUsers() throws Exception{
-        mockMvc.perform(get("/user").param("name", "zhangsan")
+        mockMvc.perform(get("/v1/user/get").param("name", "zhangsan")
                 .contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.length()").value(1));

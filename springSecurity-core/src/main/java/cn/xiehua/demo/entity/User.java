@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.util.Date;
 
 /**
- * User
+ * UserRespDTO
  *
  * @author xiehua
  * @date 2018/08/06

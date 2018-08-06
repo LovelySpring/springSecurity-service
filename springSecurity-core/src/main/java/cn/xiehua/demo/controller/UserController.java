@@ -1,30 +1,37 @@
 package cn.xiehua.demo.controller;
 
-import cn.xiehua.demo.dto.User;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import cn.xiehua.demo.entity.User;
+import cn.xiehua.demo.service.IUserService;
+import com.alibaba.fastjson.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.annotation.Resource;
 
 /**
  * @author xiehua
  * @date 2018/06/15
- *
  */
-@RestController
+@Controller
+@RequestMapping(value = "/v1/user")
 public class UserController {
+    private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public List<User> getUsers(@RequestParam(value = "name", required = false) String name) {
-        System.out.println(name);
-        List users = new ArrayList();
-        User user = new User();
-        user.setUsername("张三");
-        user.setPassword("123456");
-        users.add(user);
-        return users;
+    @Resource
+    private IUserService userService;
+
+    /**
+     * 通过id获取用户信息
+     *
+     * @param id     用户id
+     * @return
+     */
+    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public String getById(@PathVariable(value = "id") Integer id) {
+        User user = userService.getById(id);
+        return JSONObject.toJSONString(user);
     }
 }

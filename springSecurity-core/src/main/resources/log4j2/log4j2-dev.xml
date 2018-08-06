@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>%d %p [%t] %C (%F:%L) - %m%n</pattern>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.springframework" level="INFO"/>
+        <Logger name="org.mybatis" level="ERROR"/>
+        <Logger name="org.apache.http" level="ERROR"/>
+        <Logger name="org.hibernate" level="ERROR"/>
+        <Logger name="com.netflix" level="ERROR"/>
+        <Logger name="springfox" level="INFO"/>
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

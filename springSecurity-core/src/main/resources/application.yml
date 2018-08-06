@@ -1,18 +1,3 @@
-server:
-  port: 8080
-
 spring:
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
-    username: root
-    password: root
-    type: com.alibaba.druid.pool.DruidDataSource
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-
-#security:
-#  basic:
-#    enabled: false
+  profiles:
+    active: dev

@@ -28,6 +28,6 @@ public class UserDetailServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         logger.info("the username of login = " + s);
         // 这里需要通过查询数据库  封装一个UserDetails对象
-        return new User(s, "123456", AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
+        return new User(s, "123456", AuthorityUtils.commaSeparatedStringToAuthorityList("xiehua"));
     }
 }

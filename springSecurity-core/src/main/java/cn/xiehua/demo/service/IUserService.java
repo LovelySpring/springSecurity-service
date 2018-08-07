@@ -7,4 +7,6 @@ import cn.xiehua.demo.entity.User;
  */
 public interface IUserService {
     User getById(Integer id);
+
+    User getByUsername(String username);
 }

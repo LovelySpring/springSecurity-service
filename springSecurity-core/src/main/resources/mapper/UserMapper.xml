@@ -23,8 +23,14 @@
         <result property="isDelete" column="is_delete"/>
 	</resultMap>
 
+    <!-- 通过主键查找 -->
 	<select id="getById" resultMap="BaseResultMap">
 		SELECT <include refid="Base_Column_List"/> FROM pe_user WHERE is_delete = 0 AND id = #{id}
 	</select>
+
+    <!-- 通过用户名查找用户 -->
+    <select id="queryByUsername" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM pe_user WHERE is_delete = 0 AND username = #{username}
+    </select>
 </mapper>
 

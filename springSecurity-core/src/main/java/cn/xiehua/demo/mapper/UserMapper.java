@@ -8,4 +8,6 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface UserMapper {
     User getById(@Param(value = "id") Integer id);
+
+    User queryByUsername(@Param(value = "username") String username);
 }

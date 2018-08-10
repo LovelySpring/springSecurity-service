@@ -16,7 +16,7 @@ public class SecurityApplication {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
-        return "HELLO WORLD";
+        return "<h1>HELLO WORLD</h1>";
     }
 
     public static void main(String[] args) {

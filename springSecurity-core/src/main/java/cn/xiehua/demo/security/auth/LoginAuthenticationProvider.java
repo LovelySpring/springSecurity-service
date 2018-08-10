@@ -28,6 +28,13 @@ public class LoginAuthenticationProvider implements AuthenticationProvider {
     @Autowired
     private IUserDetailService userDetailService;
 
+    /**
+     * 具体的认证逻辑
+     *
+     * @param authentication
+     * @return
+     * @throws AuthenticationException
+     */
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String username = authentication.getName();

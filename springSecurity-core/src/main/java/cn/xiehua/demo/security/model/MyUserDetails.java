@@ -23,6 +23,10 @@ public class MyUserDetails implements UserDetails, CredentialsContainer{
 
     private String password;
 
+    public MyUserDetails() {
+
+    }
+
     public MyUserDetails(String userJson) {
         Assert.notNull(userJson);
         JSONObject jsonObject = JSONObject.parseObject(userJson);

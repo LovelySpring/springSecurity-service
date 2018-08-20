@@ -1,7 +1,7 @@
 package cn.xiehua.demo.security.config;
 
 import cn.xiehua.demo.security.auth.LoginAuthenticationProvider;
-import cn.xiehua.demo.security.filter.JwtLoginFilter;
+import cn.xiehua.demo.security.filter.JwtProcessingFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -68,8 +68,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      * @return
      * @throws Exception
      */
-    protected JwtLoginFilter buildJwtLoginFilter() throws Exception {
-        JwtLoginFilter jwtLoginFilter = new JwtLoginFilter(TOKEN_PATH, successHandler, null);
+    protected JwtProcessingFilter buildJwtLoginFilter() throws Exception {
+        JwtProcessingFilter jwtLoginFilter = new JwtProcessingFilter(TOKEN_PATH, successHandler, null);
         jwtLoginFilter.setAuthenticationManager(this.authenticationManager());
         return jwtLoginFilter;
     }

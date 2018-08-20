@@ -24,14 +24,14 @@ import java.io.IOException;
  * @author xiehua
  * @date 2018/08/09
  */
-public class JwtLoginFilter extends AbstractAuthenticationProcessingFilter {
-    private static final Logger log = LoggerFactory.getLogger(JwtLoginFilter.class);
+public class JwtProcessingFilter extends AbstractAuthenticationProcessingFilter {
+    private static final Logger log = LoggerFactory.getLogger(JwtProcessingFilter.class);
 
     private AuthenticationSuccessHandler successHandler;
 
     private AuthenticationFailureHandler failureHandler;
 
-    public JwtLoginFilter(String url, AuthenticationSuccessHandler successHandler, AuthenticationFailureHandler failureHandler) {
+    public JwtProcessingFilter(String url, AuthenticationSuccessHandler successHandler, AuthenticationFailureHandler failureHandler) {
         super(url);
         this.successHandler = successHandler;
         this.failureHandler = failureHandler;
